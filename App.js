@@ -19,7 +19,7 @@ export default function App() {
     };
 
     const addGoalHandler = () => {
-        setCourseGoals((prev) => [...prev, input]);
+        setCourseGoals((prev) => [...prev, {text: input, key: Date.now()}]);
     };
 
     return (
@@ -39,7 +39,7 @@ export default function App() {
                     renderItem={(itemData) => {
                         return (
                             <View style={styles.goalItem}>
-                                <Text>{itemData.index + 1}. {itemData.item}</Text>
+                                <Text>{itemData.index + 1}. {itemData.item.text}</Text>
                             </View>
                         );
                     }}
