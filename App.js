@@ -1,14 +1,6 @@
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import {
-    Button,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
-    FlatList,
-} from "react-native";
+import { Button, StyleSheet, TextInput, View, FlatList } from "react-native";
+import GoalItem from "./components/GoalItem";
 
 export default function App() {
     const [input, setInput] = useState("");
@@ -19,7 +11,7 @@ export default function App() {
     };
 
     const addGoalHandler = () => {
-        setCourseGoals((prev) => [...prev, {text: input, id: Date.now()}]);
+        setCourseGoals((prev) => [...prev, { text: input, id: Date.now() }]);
     };
 
     return (
@@ -37,15 +29,11 @@ export default function App() {
                 <FlatList
                     data={courseGoals}
                     renderItem={(itemData) => {
-                        return (
-                            <View style={styles.goalItem}>
-                                <Text>{itemData.index + 1}. {itemData.item.text}</Text>
-                            </View>
-                        );
+                        return <GoalItem itemData={itemData} />;
                     }}
                     //if data has 'key' key, there is no need to keyExtractior
                     keyExtractor={(item, index) => {
-                      return item.id
+                        return item.id;
                     }}
                 />
             </View>
@@ -77,12 +65,5 @@ const styles = StyleSheet.create({
     },
     goalsContainer: {
         flex: 9,
-    },
-    goalItem: {
-        margin: 8,
-        padding: 8,
-        //this doesn't work on ios, we need to wrap text in view component
-        borderRadius: 6,
-        backgroundColor: "#eeeeee",
     },
 });
