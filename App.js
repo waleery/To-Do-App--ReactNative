@@ -4,20 +4,16 @@ import { Button, StyleSheet, Text, View } from "react-native";
 export default function App() {
     return (
         <View style={styles.container}>
-            <Text style={styles.dummyText}>Another piece of text</Text>
-            <Text
-                style={{
-                    marginTop: 16,
-                    borderColor: "red",
-                    borderWidth: "2px",
-                    padding: 16,
-                }}
-            >
-                Hello word!
-            </Text>
+            <Text style={a}>Another piece of text</Text>
+            <Text style={styles.dummyText}>Hello word!</Text>
             <Button title="Tap me!" />
         </View>
     );
+}
+
+const a = {
+  borderColor:"green",
+  borderWidth:2
 }
 
 const styles = StyleSheet.create({
