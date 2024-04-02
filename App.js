@@ -19,7 +19,7 @@ export default function App() {
     };
 
     const addGoalHandler = () => {
-        setCourseGoals((prev) => [...prev, {text: input, key: Date.now()}]);
+        setCourseGoals((prev) => [...prev, {text: input, id: Date.now()}]);
     };
 
     return (
@@ -42,6 +42,10 @@ export default function App() {
                                 <Text>{itemData.index + 1}. {itemData.item.text}</Text>
                             </View>
                         );
+                    }}
+                    //if data has 'key' key, there is no need to keyExtractior
+                    keyExtractor={(item, index) => {
+                      return item.id
                     }}
                 />
             </View>
