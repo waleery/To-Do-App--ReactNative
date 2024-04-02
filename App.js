@@ -3,15 +3,15 @@ import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function App() {
-    const [input, setInput] = useState("")
-    const [courseGoals, setCourseGoals] = useState([])
+    const [input, setInput] = useState("");
+    const [courseGoals, setCourseGoals] = useState([]);
 
     const goalInputHandler = (enteredText) => {
-      setInput(enteredText)
+        setInput(enteredText);
     };
 
     const addGoalHandler = () => {
-      setCourseGoals(prev => [...prev, input])
+        setCourseGoals((prev) => [...prev, input]);
     };
 
     return (
@@ -22,12 +22,14 @@ export default function App() {
                     placeholder="Your course goal!"
                     onChangeText={goalInputHandler}
                 />
-                <Button title="Add Goal" onPress={addGoalHandler}/>
+                <Button title="Add Goal" onPress={addGoalHandler} />
             </View>
             <View style={styles.goalsContainer}>
-                {courseGoals.map((goal) => 
-                  <Text style={styles.goalItem}>{goal}</Text>
-                )}
+                {courseGoals.map((goal) => (
+                    <View style={styles.goalItem}>
+                        <Text>{goal}</Text>
+                    </View>
+                ))}
             </View>
         </View>
     );
@@ -59,10 +61,10 @@ const styles = StyleSheet.create({
         flex: 9,
     },
     goalItem: {
-      margin:8,
-      padding:8,
-      //this doesn't work on ios
-      borderRadius:6,
-      backgroundColor: "#cccccc"
-    }
+        margin: 8,
+        padding: 8,
+        //this doesn't work on ios, we need to wrap text in view component
+        borderRadius: 6,
+        backgroundColor: "#cccccc",
+    },
 });
