@@ -10,6 +10,7 @@ const GoalInput = ({ onAddGoal}) => {
 
     const addGoalHandler = () => {
         onAddGoal(input);
+        setInput('')
     };
     return (
         <>
@@ -17,6 +18,7 @@ const GoalInput = ({ onAddGoal}) => {
                 style={styles.textInput}
                 placeholder="Your course goal!"
                 onChangeText={goalInputHandler}
+                value={input}
             />
             <Button title="Add Goal" onPress={addGoalHandler} />
         </>
