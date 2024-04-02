@@ -11,6 +11,9 @@ export default function App() {
     const addGoalHandler = (enteredGoalText) => {
         setCourseGoals((prev) => [...prev, { text: enteredGoalText, id: Date.now() }]);
     };
+    const deleteGoalHandler = (id) => {
+        setCourseGoals((prev) => prev.filter(item => item.id !== id));
+    };
 
     return (
         <View style={styles.appContainer}>
@@ -24,7 +27,7 @@ export default function App() {
                 <FlatList
                     data={courseGoals}
                     renderItem={(itemData) => {
-                        return <GoalItem itemData={itemData} />;
+                        return <GoalItem itemData={itemData} deleteItem={deleteGoalHandler}/>;
                     }}
                     //if data has 'key' key, there is no need to keyExtractior
                     keyExtractor={(item, index) => {
