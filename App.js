@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 export default function App() {
     return (
         <View style={styles.appContainer}>
-            <View>
+            <View style={styles.inputCointainer}>
                 <TextInput placeholder="Your course goal!" />
                 <Button title="Add Goal" />
             </View>
@@ -17,6 +17,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   appContainer: {
-    padding:50
+    padding:50,
+  },
+  inputCointainer:{
+    flexDirection:"row"
   }
 });
