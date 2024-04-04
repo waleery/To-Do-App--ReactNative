@@ -6,7 +6,7 @@ const GoalItem = ({ itemData, deleteItem }) => {
     const [pressed, setPressed] = useState(false);
 
     return (
-        <View style={pressed ? styles.pressedItem : styles.goalItem}>
+        <View style={[styles.goalItem, pressed && styles.pressedItem]}>
             <Text style={styles.goalText}>
                 {itemData.index + 1}. {itemData.item.text}
             </Text>
@@ -37,14 +37,7 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     pressedItem: {
-        margin: 8,
-        //this doesn't work on ios, we need to wrap text in view component
-        borderRadius: 6,
         backgroundColor: "#FF7F7F",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: 8,
         opacity: 0.25,
     },
     goalText: {
