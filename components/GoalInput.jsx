@@ -26,7 +26,7 @@ const GoalInput = ({ onAddGoal, showModal, endAddGoalHandler }) => {
                         <Button title="Add Goal" onPress={addGoalHandler} />
                     </View>
                     <View style={styles.button}>
-                        <Button title="Cancel" onPress={endAddGoalHandler} />
+                        <Button title="Cancel" onPress={endAddGoalHandler} color="red" />
                     </View>
                 </View>
             </View>
