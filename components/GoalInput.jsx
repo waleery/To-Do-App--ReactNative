@@ -17,7 +17,7 @@ const GoalInput = ({ onAddGoal, showModal, endAddGoalHandler }) => {
             <View style={styles.inputCointainer}>
                 <TextInput
                     style={styles.textInput}
-                    placeholder="Your course goal!"
+                    placeholder="Your goal..."
                     onChangeText={goalInputHandler}
                     value={input}
                 />
