@@ -1,12 +1,9 @@
 
-![Main screen](assets/screenshots/Screenshoot_1.png) ![Add goal screen](assets/screenshots/Screenshoot_2.png) 
+![Main screen](assets/screenshots/Screenshoot_1.png) | ![Add goal screen](assets/screenshots/Screenshoot_2.png) 
 
 
 
 Simple mobile application built in React Native, designed to allow users to track and manage their goals. This user-friendly app was created to familiarize to the React Native.
-## Demo
-
-https://achiveo.vercel.app/
 
 ## Tech Stack
 
