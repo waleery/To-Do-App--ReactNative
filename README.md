@@ -1,7 +1,7 @@
 
-<p float="left">
-  <img src="/assets/screenshots/Screenshoot_1.png" alt="Main screen" width="100" />
-  <img src="/assets/screenshots/Screenshoot_2.png" alt="Add goal screen" width="100" /> 
+<p align="middle">
+  <img src="/assets/screenshots/Screenshoot_1.png" alt="Main screen" width="30%" />
+  <img src="/assets/screenshots/Screenshoot_2.png" alt="Add goal screen" width="30%" /> 
 </p>
 
 Simple mobile application built in React Native, designed to allow users to track and manage their goals. This user-friendly app was created to familiarize to the React Native.
